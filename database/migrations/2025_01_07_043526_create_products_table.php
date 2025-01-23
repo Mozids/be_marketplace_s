@@ -16,6 +16,12 @@ return new class extends Migration
             $table->string('type_name');
             $table->timestamps();
         });
+        Schema::create('banners', function (Blueprint $table) {
+            $table->id();
+            $table->string('banners_url');
+            $table->string('banners_url_name');
+            $table->timestamps();
+        });
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('products_name');
@@ -39,5 +45,7 @@ return new class extends Migration
     {
         Schema::dropIfExists('product');
         Schema::dropIfExists('product_types');
+        Schema::dropIfExists('banners');
+        
     }
 };
